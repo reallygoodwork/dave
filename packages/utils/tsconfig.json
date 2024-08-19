@@ -1,0 +1,27 @@
+{
+  "extends": "@reallygoodwork/typescript-config/base.json",
+  "include": [
+    "tsup.config.ts",
+    "src/**/*.ts",
+  ],
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
+    "baseUrl": ".",
+    "paths": {
+      "@utils/*": ["src/utils/*"],
+      "@lib/*": ["src/lib/*"],
+      "@configTypes/*": ["src/configTypes/*"],
+      "@configTypes/attributes": ["src/configTypes/attributes/attributes.ts"],
+      "@configTypes/component": ["src/configTypes/component/component.ts"],
+      "@configTypes/element": ["src/configTypes/element/element.ts"],
+      "@configTypes/dependencies": ["src/configTypes/dependencies/dependencies.ts"],
+      "@configTypes/props": ["src/configTypes/props/props.ts"],
+      "@configTypes/sanity": ["src/configTypes/sanity/sanity.ts"],
+      "@configTypes/state": ["src/configTypes/state/state.ts"],
+      "@configTypes/variants": ["src/configTypes/variants/variants.ts"],
+      "@configTypes/compoundVariants": ["src/configTypes/variants/compoundVariants.ts"],
+      "@configTypes/shared": ["src/configTypes/shared.ts"]
+    }
+  }
+}

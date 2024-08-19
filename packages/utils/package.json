@@ -1,0 +1,38 @@
+{
+  "name": "@reallygoodwork/figma-utils",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "@reallygoodwork/eslint-config": "workspace:*",
+    "@reallygoodwork/typescript-config": "workspace:*",
+    "@reallygoodwork/prettier-config": "workspace:*",
+    "@turbo/gen": "^1.12.4",
+    "@types/eslint": "^8.56.5",
+    "@types/lodash": "^4.17.7",
+    "@types/node": "^20.11.24",
+    "eslint": "^8.57.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "lodash": "^4.17.21",
+    "tsup": "^8.2.4",
+    "typescript": "^5.3.3",
+    "zod": "^3.23.8"
+  },
+  "dependencies": {
+    "@figma/plugin-typings": "^1.98.0",
+    "colord": "^2.9.3"
+  },
+  "prettier": "@reallygoodwork/prettier-config"
+}

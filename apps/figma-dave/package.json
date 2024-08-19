@@ -1,0 +1,38 @@
+{
+  "name": "@reallygoodwork/figma-dave",
+  "version": "0.0.0",
+  "type": "module",
+  "prettier": "@reallygoodwork/prettier-config",
+  "scripts": {
+    "dev": "concurrently -n tsc,build,vite 'pnpm:tsc:watch' 'pnpm:build:watch' 'vite'",
+    "build:main": "esbuild src/plugin/code.ts --bundle --target=es6 --format=cjs --outfile=dist/code.js",
+    "build:ui": "pnpm vite build --emptyOutDir=false",
+    "build:watch": "concurrently -n widget,iframe \"pnpm build:main --watch\" \"pnpm build:ui --watch\"",
+    "build": "pnpm build:ui && pnpm build:main --minify",
+    "tsc:watch": "pnpm tsc --watch --preserveWatchOutput"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.98.0",
+    "@reallygoodwork/prettier-config": "workspace:*",
+    "@types/react": "^18.3.3",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.23.1",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.1",
+    "vite-plugin-singlefile": "^2.0.2"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "19.0.0-rc-f994737d14-20240522"
+  }
+}
