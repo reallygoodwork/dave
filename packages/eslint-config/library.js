@@ -1,44 +1,50 @@
-const {resolve} = require("node:path");
+import EslintReact from 'eslint-plugin-react';
+import EslintReactHooks from 'eslint-plugin-react-hooks';
+import EslintImport from 'eslint-plugin-import';
+import EslintPluginPrettier from 'eslint-plugin-prettier';
+import TypeScriptParser from '@typescript-eslint/parser';
 
-const project = resolve(process.cwd(), "tsconfig.json");
-
-/** @type {import("eslint").Linter.Config} */
-module.exports = {
-  extends: ["eslint:recommended", "prettier", "turbo", "plugin:@typescript-eslint/recommended", "plugin:import/recommended",
-    "plugin:import/typescript"],
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-  },
-  plugins: ["only-warn"],
-  globals: {
-    React: true,
-    JSX: true,
-  },
-  env: {
-    node: true,
-    browser: true,
-    es2021: true,
-  },
-  settings: {
-    "import/resolver": {
-      typescript: {
-        project,
+export default [
+  {
+    name: 'library',
+    files: ["*.js?(x)", "*.ts?(x)"],
+    ignores: [
+      // Ignore dotfiles
+      ".*.js",
+      "node_modules/",
+      "dist/",
+      "pnpm-lock.yaml",
+    ],
+    settings: {
+      "import/parsers": {
+        "@typescript-eslint/parser": [".ts", ".tsx"]
       },
     },
-  },
-  ignorePatterns: [
-    // Ignore dotfiles
-    ".*.js",
-    "node_modules/",
-    "dist/",
-    "pnpm-lock.yaml",
-  ],
-  overrides: [
-    {
-      files: ["*.js?(x)", "*.ts?(x)"],
+    languageOptions: {
+      parser: TypeScriptParser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        env: {
+          node: true,
+          browser: true,
+          es2021: true,
+        },
+        globals: {
+          React: true,
+          JSX: true,
+        },
+      },
     },
-  ],
-
-};
+    plugins: {
+      EslintReactHooks,
+      EslintReact,
+      EslintImport,
+      EslintPluginPrettier
+    },
+    rules: {
+      "no-unused-vars": "error",
+      "no-undef": "error"
+    }
+  }
+];

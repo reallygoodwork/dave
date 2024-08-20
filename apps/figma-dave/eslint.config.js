@@ -9,9 +9,30 @@ const project = resolve(process.cwd(), "tsconfig.json");
 
 export default [
   {
+    name: 'figma-dave',
     files: ["*.js?(x)", "*.ts?(x)"],
+    ignores: [
+      // Ignore dotfiles
+      ".*.js",
+      "node_modules/",
+      "dist/",
+      "pnpm-lock.yaml",
+    ],
     languageOptions: {
       parser: TypeScriptParser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        env: {
+          node: true,
+          browser: true,
+          es2021: true,
+        },
+        globals: {
+          React: true,
+          JSX: true,
+        },
+      },
     },
     settings: {
       "import/resolver": {

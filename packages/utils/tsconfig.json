@@ -1,5 +1,5 @@
 {
-  "extends": "@reallygoodwork/typescript-config/base.json",
+  "extends": "@reallygoodwork/typescript-config/react-library.json",
   "include": [
     "tsup.config.ts",
     "src/**/*.ts",
@@ -8,6 +8,8 @@
   "compilerOptions": {
     "typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
     "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "paths": {
       "@utils/*": ["src/utils/*"],
       "@lib/*": ["src/lib/*"],
