@@ -1,5 +1,5 @@
-import { includePx } from '@lib/returnUnitValue'
-import { defineNodeType } from '@utils/defineNodeType'
+import { includePx } from "@lib/returnUnitValue";
+import { defineNodeType } from "@utils/defineNodeType";
 
 /**
  * @category Style Utils
@@ -8,23 +8,25 @@ import { defineNodeType } from '@utils/defineNodeType'
  */
 export const getBorderRadius = (node: BaseNode) => {
   const styles: {
-    borderRadius: string | number | undefined
+    borderRadius: string | number | undefined;
   } = {
     borderRadius: undefined,
-  }
-  const nodeType = defineNodeType(node)
-  if ('topLeftRadius' in nodeType) {
+  };
+  const nodeType = defineNodeType(node);
+  if ("topLeftRadius" in nodeType) {
     if (
       nodeType.topLeftRadius === nodeType.topRightRadius &&
       nodeType.topLeftRadius === nodeType.bottomLeftRadius &&
       nodeType.topLeftRadius === nodeType.bottomRightRadius
     ) {
       return (styles.borderRadius =
-        nodeType.topLeftRadius === 0 ? nodeType.topLeftRadius : nodeType.topLeftRadius + 'px')
+        nodeType.topLeftRadius === 0
+          ? nodeType.topLeftRadius
+          : nodeType.topLeftRadius + "px");
     } else {
-      return (styles.borderRadius = `${includePx(nodeType.topLeftRadius)} ${includePx(nodeType.topRightRadius)} ${includePx(nodeType.bottomRightRadius)} ${includePx(nodeType.bottomLeftRadius)}`)
+      return (styles.borderRadius = `${includePx(nodeType.topLeftRadius)} ${includePx(nodeType.topRightRadius)} ${includePx(nodeType.bottomRightRadius)} ${includePx(nodeType.bottomLeftRadius)}`);
     }
   }
 
-  return styles
-}
+  return styles;
+};

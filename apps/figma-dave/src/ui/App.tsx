@@ -1,4 +1,5 @@
 import React from 'react'
+
 function App() {
   const [hasSavedSpec, setHasSavedSpec] = React.useState<boolean>(false)
   const [spec, setSpec] = React.useState<string>('')
@@ -32,8 +33,6 @@ function App() {
     }
   }, [])
 
-
-
   return (
     <div className="flex flex-col antialiased bg-white h-dvh">
       <div className="flex gap-2 bg-darkgreen p-4">
@@ -62,9 +61,7 @@ function App() {
           Copy
         </button>
       </div>
-      <div className="flex-1 bg-darkgreen">
-
-      </div>
+      <div className="flex-1 bg-darkgreen"></div>
     </div>
   )
 }

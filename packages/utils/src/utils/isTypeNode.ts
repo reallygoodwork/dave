@@ -5,8 +5,8 @@
  * @category Node
  */
 export const isGroupNode = (node: BaseNode): node is GroupNode => {
-  return node.type === 'GROUP'
-}
+  return node.type === "GROUP";
+};
 
 /**
  * Checks node to be TextNode
@@ -15,8 +15,8 @@ export const isGroupNode = (node: BaseNode): node is GroupNode => {
  * @category Node
  */
 export const isTextNode = (node: BaseNode): node is TextNode => {
-  return node.type === 'TEXT'
-}
+  return node.type === "TEXT";
+};
 
 /**
  * Checks node to be VectorNode
@@ -25,8 +25,8 @@ export const isTextNode = (node: BaseNode): node is TextNode => {
  * @category Node
  */
 export const isVectorNode = (node: BaseNode): node is VectorNode => {
-  return node.type === 'VECTOR'
-}
+  return node.type === "VECTOR";
+};
 
 /**
  * Checks node to be BooleanOperationNode
@@ -34,9 +34,11 @@ export const isVectorNode = (node: BaseNode): node is VectorNode => {
  * @returns Boolean
  * @category Node
  */
-export const isBooleanOperationNode = (node: BaseNode): node is BooleanOperationNode => {
-  return node.type === 'BOOLEAN_OPERATION'
-}
+export const isBooleanOperationNode = (
+  node: BaseNode,
+): node is BooleanOperationNode => {
+  return node.type === "BOOLEAN_OPERATION";
+};
 
 /**
  * Checks node to be ComponentNode
@@ -45,8 +47,8 @@ export const isBooleanOperationNode = (node: BaseNode): node is BooleanOperation
  * @category Node
  */
 export const isComponentNode = (node: BaseNode): node is ComponentNode => {
-  return node.type === 'COMPONENT'
-}
+  return node.type === "COMPONENT";
+};
 
 /**
  * Checks node to be InstanceNode
@@ -55,8 +57,8 @@ export const isComponentNode = (node: BaseNode): node is ComponentNode => {
  * @category Node
  */
 export const isInstanceNode = (node: BaseNode): node is InstanceNode => {
-  return node.type === 'INSTANCE'
-}
+  return node.type === "INSTANCE";
+};
 
 /**
  * Checks node to be FrameNode
@@ -65,8 +67,8 @@ export const isInstanceNode = (node: BaseNode): node is InstanceNode => {
  * @category Node
  */
 export const isFrameNode = (node: BaseNode): node is FrameNode => {
-  return node.type === 'FRAME'
-}
+  return node.type === "FRAME";
+};
 
 /**
  * Checks node to be PageNode
@@ -75,8 +77,8 @@ export const isFrameNode = (node: BaseNode): node is FrameNode => {
  * @category Node
  */
 export const isPageNode = (node: BaseNode): node is PageNode => {
-  return node.type === 'PAGE'
-}
+  return node.type === "PAGE";
+};
 
 /**
  * Checks node to be DocumentNode
@@ -85,8 +87,8 @@ export const isPageNode = (node: BaseNode): node is PageNode => {
  * @category Node
  */
 export const isDocumentNode = (node: BaseNode): node is DocumentNode => {
-  return node.type === 'DOCUMENT'
-}
+  return node.type === "DOCUMENT";
+};
 
 /**
  * Checks node to be RectangleNode
@@ -95,8 +97,8 @@ export const isDocumentNode = (node: BaseNode): node is DocumentNode => {
  * @category Node
  */
 export const isRectangleNode = (node: BaseNode): node is RectangleNode => {
-  return node.type === 'RECTANGLE'
-}
+  return node.type === "RECTANGLE";
+};
 
 /**
  * Checks node to be EllipseNode
@@ -105,8 +107,8 @@ export const isRectangleNode = (node: BaseNode): node is RectangleNode => {
  * @category Node
  */
 export const isEllipseNode = (node: BaseNode): node is EllipseNode => {
-  return node.type === 'ELLIPSE'
-}
+  return node.type === "ELLIPSE";
+};
 
 /**
  * Checks node to be LineNode
@@ -115,8 +117,8 @@ export const isEllipseNode = (node: BaseNode): node is EllipseNode => {
  * @category Node
  */
 export const isLineNode = (node: BaseNode): node is LineNode => {
-  return node.type === 'LINE'
-}
+  return node.type === "LINE";
+};
 
 /**
  * Checks node to be PolygonNode
@@ -125,8 +127,8 @@ export const isLineNode = (node: BaseNode): node is LineNode => {
  * @category Node
  */
 export const isPolygonNode = (node: BaseNode): node is PolygonNode => {
-  return node.type === 'POLYGON'
-}
+  return node.type === "POLYGON";
+};
 
 /**
  * Checks node to be StarNode
@@ -135,8 +137,8 @@ export const isPolygonNode = (node: BaseNode): node is PolygonNode => {
  * @category Node
  */
 export const isStarNode = (node: BaseNode): node is StarNode => {
-  return node.type === 'STAR'
-}
+  return node.type === "STAR";
+};
 
 /**
  * Checks node to be SliceNode
@@ -145,8 +147,8 @@ export const isStarNode = (node: BaseNode): node is StarNode => {
  * @category Node
  */
 export const isSliceNode = (node: BaseNode): node is SliceNode => {
-  return node.type === 'SLICE'
-}
+  return node.type === "SLICE";
+};
 
 /**
  * Checks node to be ComponentSetNode
@@ -154,9 +156,11 @@ export const isSliceNode = (node: BaseNode): node is SliceNode => {
  * @returns Boolean
  * @category Node
  */
-export const isComponentSetNode = (node: BaseNode): node is ComponentSetNode => {
-  return node.type === 'COMPONENT_SET'
-}
+export const isComponentSetNode = (
+  node: BaseNode,
+): node is ComponentSetNode => {
+  return node.type === "COMPONENT_SET";
+};
 
 /**
  * Checks node to be HighlightNode
@@ -165,8 +169,8 @@ export const isComponentSetNode = (node: BaseNode): node is ComponentSetNode => 
  * @category Node
  */
 export const isHighlightNode = (node: BaseNode): node is HighlightNode => {
-  return node.type === 'HIGHLIGHT'
-}
+  return node.type === "HIGHLIGHT";
+};
 
 /**
  * Checks node to be WashiTapeNode
@@ -175,8 +179,8 @@ export const isHighlightNode = (node: BaseNode): node is HighlightNode => {
  * @category Node
  */
 export const isWashiTapeNode = (node: BaseNode): node is WashiTapeNode => {
-  return node.type === 'WASHI_TAPE'
-}
+  return node.type === "WASHI_TAPE";
+};
 
 /**
  * Checks node to be SectionNode
@@ -185,20 +189,16 @@ export const isWashiTapeNode = (node: BaseNode): node is WashiTapeNode => {
  * @category Node
  */
 export const isSectionNode = (node: BaseNode): node is SectionNode => {
-  return node.type === 'SECTION'
-}
+  return node.type === "SECTION";
+};
 
 /**
- * Checks node to be one of provided types
+ * Checks node to be one of provided configTypes
  * @param {typeof import("@figma/plugin-typings").BaseNode} node
  * @param {typeof import("@figma/plugin-typings").NodeType[]} typeList
  * @returns Boolean
  * @category Node
  */
 export const isOneOfNodeType = (node: BaseNode, typeList: NodeType[]) => {
-  return typeList.includes(node.type)
-}
-
-
-
-
+  return typeList.includes(node.type);
+};

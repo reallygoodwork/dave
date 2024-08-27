@@ -1,0 +1,1 @@
+/// <reference configTypes="vite/client" />

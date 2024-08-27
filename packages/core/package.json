@@ -1,0 +1,48 @@
+{
+  "name": "@reallygoodwork/ui-core",
+  "version": "1.0.0",
+  "description": "",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "test": "jest",
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@reallygoodwork/eslint-config": "workspace:*",
+    "@reallygoodwork/typescript-config": "workspace:*",
+    "@turbo/gen": "^1.12.4",
+    "@types/eslint": "^9.6.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.24",
+    "@types/lodash": "^4.17.7",
+    "eslint": "^9.9.0",
+    "lodash": "^4.17.21",
+    "jest": "^29.7.0",
+    "node-html-parser": "^6.1.13",
+    "prettier": "^3.2.5",
+    "ts-jest": "^29.2.5",
+    "tw-to-css": "^0.0.12",
+    "type-fest": "^4.25.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "^7.1.0",
+    "colord": "^2.9.3",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "tsup": "^8.2.4"
+  }
+}
