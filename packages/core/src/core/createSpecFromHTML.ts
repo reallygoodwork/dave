@@ -3,7 +3,7 @@ import { parse, HTMLElement } from "node-html-parser";
 import { parseNode } from "@core/parseHTMLNodeToSpec.ts";
 
 // Convert Style String to Object
-export const createSpecFromHTML = (html: string): UISpecRoot => {
+export const createSpecFromHTML = (html: string) => {
   const root = parse(html);
 
   if (!root) {

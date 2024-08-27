@@ -5,6 +5,7 @@ import { pascalCaseString } from "@utils/pascalCaseString.ts";
 import { createAttributes } from "@core/createAttributes.ts";
 import { styleAttributeToObject } from "@core/styleAttributeToObject.ts";
 import { twj } from "tw-to-css";
+import { parseTailwindString } from "@reallygoodwork/tw2css";
 
 export const parseNode = (node: HTMLElement): UISpecRoot => {
   const hasText = node.childNodes.some(
@@ -16,13 +17,20 @@ export const parseNode = (node: HTMLElement): UISpecRoot => {
     ...BaseSpec,
     name: pascalCaseString(node.tagName),
     elementType: node.tagName.toLowerCase(),
-    elementAttributes: createAttributes(node.attributes),
     styles: {
       ...styleAttributeToObject(node.getAttribute("style")),
       ...twj(node.classList.toString()),
     },
-    children: [],
   };
+
+  parseTailwindString(node.classList.toString());
+
+  if (Object.keys(node.attributes).length) {
+    const { style: _0, class: _1, ...rest } = node.attributes;
+    if (Object.keys(rest).length) {
+      spec.elementAttributes = createAttributes(rest);
+    }
+  }
 
   if (hasText) {
     spec.hasText = true;
@@ -30,6 +38,10 @@ export const parseNode = (node: HTMLElement): UISpecRoot => {
       .filter((childNode) => childNode.nodeType === 3)
       .map((childNode) => childNode.innerText.trim())
       .join(" ");
+  }
+
+  if (node.childNodes.length > 0 && !hasText) {
+    spec.children = [];
   }
 
   // Recursively parse children nodes

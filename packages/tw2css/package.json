@@ -1,5 +1,5 @@
 {
-  "name": "@reallygoodwork/ui-core",
+  "name": "@reallygoodwork/tw2css",
   "version": "1.0.0",
   "description": "",
   "sideEffects": false,
@@ -23,7 +23,6 @@
   "devDependencies": {
     "@reallygoodwork/eslint-config": "workspace:*",
     "@reallygoodwork/typescript-config": "workspace:*",
-    "@reallygoodwork/tw2css": "workspace:*",
     "@turbo/gen": "^1.12.4",
     "@types/eslint": "^9.6.0",
     "@types/jest": "^29.5.12",
